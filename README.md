@@ -1,4 +1,16 @@
 # NewsAppStage1
 NewsAppStage1 made with Udacity. This project is part of Android Basics by Google - Nanodegree Program.
 
+Connecting to an API
+
+Parsing the JSON response
+
+Handling error cases gracefully
+
+Updating information regularly
+
+Using an AsyncTask
+
+Doing network operations independent of the Activity lifecycle
+
 ![Alt text](https://lh3.googleusercontent.com/VFEi1N3M86TJdlRalR6nRlbQpYj3jwa2_mPUEDq8rDY8C8-2pSHvIVKWe31PjRH3DRvKqTI5NXh7VewptQ-puC9yFqYNVqcXTjW-s5qjg-0ln1Stp1MZLYTXT388mmGpJDrghGsSh2HJVTOSbkXgsyvSSi6P-WwD3D2HAwHy1Scceg66uQjuFIBhxeHS2XdfQ8S6fPQrRlZ60s9cJydXWIYbbp8E5rYAH_jhaOAGq4zPyBCAk3muXZLKL2jggrH4CuPqhIJqGmYLijZ7eeCjTu4-ABgms0XTqkP0yFU5FwMjxs4G-e8143wvW7Swn9hA0O8JQdwXSthqBLk2N7ZRVcHTjaCrSJ4NmVsmrZxadVlGLkijRguIEoK3sdUibFAIf6pwFl3VMZetKJOMeZhS48KLgcmxOXXEcoupAK1bOUfNVdGpX0wim0HGRT8WC7mcwR49A1HK5MK3PHxflz48IVVJ56Wer5H-_TLqnInyugAraYj34pO5yg8L_mVCtUF-HXciQSXzwf6ll2vW0-IBrt1a40YeXs3-zRuzBVgj1ImA9BeCSBXY0fZ2mw1_r4bnqyybUnj7pVcFcx8qhmQIX8Um3cveB2dK7-uxgFo=w371-h662-no "Screenshot 1")
