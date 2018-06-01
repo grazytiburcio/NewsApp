@@ -22,7 +22,7 @@ import java.util.List;
 public class NewsActivity extends AppCompatActivity
         implements LoaderCallbacks<List<News>> {
 
-    public static final String LOG_TAG = NewsActivity.class.getName();
+    private static final String LOG_TAG = NewsActivity.class.getName();
 
     /**
      * URL for news data from the THE GUARDIAN dataset
@@ -126,8 +126,8 @@ public class NewsActivity extends AppCompatActivity
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
 
-        // Set empty state text to display "No news found."
-        mEmptyStateTextView.setText(R.string.no_news);
+        // Set empty state text to display "There are no new stories. Back later and check again."
+        mEmptyStateTextView.setText(R.string.there_are_no_news_stories_back_later_and_check_again);
 
         // Clear the adapter of previous news data
         mAdapter.clear();

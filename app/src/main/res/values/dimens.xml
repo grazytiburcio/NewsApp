@@ -9,4 +9,8 @@
     <dimen name="textSizeSection">16sp</dimen>
     <dimen name="textSizeTitle">16sp</dimen>
     <dimen name="marginTopTitle">10dp</dimen>
+    <dimen name="paddingEndList">16dp</dimen>
+    <dimen name="paddingLeftList">16dp</dimen>
+    <dimen name="paddingRightList">16dp</dimen>
+    <dimen name="paddingStartList">16dp</dimen>
 </resources>
