@@ -21,10 +21,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Helper methods related to requesting and receiving news data from THE GUARDIAN.
- */
-public final class QueryUtils {
+    /**
+    * Helper methods related to requesting and receiving news data from THE GUARDIAN.
+    */
+    public final class QueryUtils {
 
     /**
      * Tag for the log messages

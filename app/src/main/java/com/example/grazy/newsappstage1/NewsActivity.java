@@ -5,12 +5,16 @@ import android.app.LoaderManager.LoaderCallbacks;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -28,7 +32,7 @@ public class NewsActivity extends AppCompatActivity
      * URL for news data from the THE GUARDIAN dataset
      */
     private static final String REQUEST_URL =
-            "https://content.guardianapis.com/search?show-tags=contributor&api-key=a8add859-ca41-4f2a-8f29-53a23235ce27";
+            "http://content.guardianapis.com/search";
 
     /**
      * Constant value for the news loader ID. We can choose any integer.
@@ -113,10 +117,32 @@ public class NewsActivity extends AppCompatActivity
     }
 
     @Override
+    // onCreateLoader instantiates and returns a new Loader for the given ID
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
         Log.i(LOG_TAG, "TEST: onCreateLoader() called...");
-        // Create a new loader for the given URL
-        return new NewsLoader(this, REQUEST_URL);
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        String sectionPreference = sharedPrefs.getString(
+                getString(R.string.settings_section_key),
+                getString(R.string.settings_section_default));
+
+        String orderBy = sharedPrefs.getString(
+                getString(R.string.settings_order_by_key),
+                getString(R.string.settings_order_by_default)
+        );
+
+        Uri baseUri = Uri.parse(REQUEST_URL);
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        uriBuilder.appendQueryParameter("section", sectionPreference);
+        uriBuilder.appendQueryParameter("order-by", orderBy);
+        uriBuilder.appendQueryParameter("from-date", "2018-01-01");
+        uriBuilder.appendQueryParameter("api-key", "test");
+
+        // Return the completed uri "http://content.guardianapis.com/search?show-tags=contributor&section=technology&order-by=newest&from-date=2018-01-01&api-key=test"
+        Log.v("my_tag", "url created is: "+uriBuilder.toString());
+        return new NewsLoader(this, uriBuilder.toString());
     }
 
     @Override
@@ -144,5 +170,22 @@ public class NewsActivity extends AppCompatActivity
         Log.i(LOG_TAG, "TEST: onLoaderReset() called...");
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
