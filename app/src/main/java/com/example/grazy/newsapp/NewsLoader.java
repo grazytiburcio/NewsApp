@@ -1,9 +1,8 @@
-package com.example.grazy.newsappstage1;
+package com.example.grazy.newsapp;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.util.Log;
-
 import java.util.List;
 
 public class NewsLoader extends AsyncTaskLoader<List<News>> {

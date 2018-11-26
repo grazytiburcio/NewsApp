@@ -1,4 +1,4 @@
-package com.example.grazy.newsappstage1;
+package com.example.grazy.newsapp;
 
 import android.text.TextUtils;
 import android.util.Log;

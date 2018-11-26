@@ -1,4 +1,4 @@
-package com.example.grazy.newsappstage1;
+package com.example.grazy.newsapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

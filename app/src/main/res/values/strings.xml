@@ -1,6 +1,6 @@
 <resources>
     <!-- Title for the application. [CHAR LIMIT=12] -->
-    <string name="app_name">News App, Stage 1</string>
+    <string name="app_name">News App</string>
 
     <!-- Text to display in the list when there are no news [CHAR LIMIT=NONE] -->
     <string name="there_are_no_news_stories_back_later_and_check_again">There are no new stories.\nBack later and check again.</string>

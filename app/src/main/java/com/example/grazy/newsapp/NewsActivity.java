@@ -1,4 +1,4 @@
-package com.example.grazy.newsappstage1;
+package com.example.grazy.newsapp;
 
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
